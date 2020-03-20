@@ -40,8 +40,12 @@ class adhesiontextArabic( object ):
         self.w.check = vanilla.CheckBox( (sp, sp*1+txY*1.5, txX, txY), "Include color", sizeStyle='regular')
         
         # UI color elements:
-        self.w.text2 = vanilla.TextBox( (sp, sp*1+txY*3, txX, txY), "Color: red", sizeStyle='regular' )
-        self.w.color = vanilla.Slider( (sp+txX, sp*1+txY*3, 195, txY), value=0, minValue=0, maxValue=11, callback=self.sliderCallback1)
+        if includeColor == 1:
+            self.w.text2 = vanilla.TextBox( (sp, sp*1+txY*3, txX, txY), "Color: red", sizeStyle='regular' )
+            self.w.color = vanilla.Slider( (sp+txX, sp*1+txY*3, 195, txY), value=0, minValue=0, maxValue=11, callback=self.sliderCallback1)
+        else:
+            self.w.text2 = vanilla.TextBox( (-500, sp*1+txY*3, txX, txY), "Color: red", sizeStyle='regular' )
+            self.w.color = vanilla.Slider( (-500, sp*1+txY*3, 195, txY), value=0, minValue=0, maxValue=11, callback=self.sliderCallback1)
         
         # Run Button:
         self.w.runButton = vanilla.Button( (-sp-btnX, sp+txY*3, -sp, btnY), "Get text", sizeStyle='regular', callback=self.typeset)

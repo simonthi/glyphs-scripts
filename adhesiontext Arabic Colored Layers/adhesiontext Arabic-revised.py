@@ -22,7 +22,7 @@ class adhesiontextArabic( object ):
         btnX = 80
         btnY = 22
         windowWidth  = sp*4+txX+224+btnX
-        windowHeight = sp*5.5+txY 
+        windowHeight = sp*6.5+txY 
 
         self.w = vanilla.FloatingWindow(
             ( windowWidth, windowHeight ), # default window size
@@ -35,13 +35,16 @@ class adhesiontextArabic( object ):
         # UI elements:
         self.w.text1 = vanilla.TextBox( (sp, sp*1+txY*0, txX, txY), "Words: 25", sizeStyle='regular' )
         self.w.words = vanilla.Slider( (sp+txX, sp*1+txY*0, 195, txY), value=25, minValue=5, maxValue=200, callback=self.sliderCallback)
+
+        #UI check color
+        self.w.check = vanilla.CheckBox( (sp, sp*1+txY*1.5, txX, txY), "Include color", sizeStyle='regular')
         
         # UI color elements:
-        self.w.text2 = vanilla.TextBox( (sp, sp*1+txY*2, txX, txY), "Color: red", sizeStyle='regular' )
-        self.w.color = vanilla.Slider( (sp+txX, sp*1+txY*2, 195, txY), value=0, minValue=0, maxValue=11, callback=self.sliderCallback1)
+        self.w.text2 = vanilla.TextBox( (sp, sp*1+txY*3, txX, txY), "Color: red", sizeStyle='regular' )
+        self.w.color = vanilla.Slider( (sp+txX, sp*1+txY*3, 195, txY), value=0, minValue=0, maxValue=11, callback=self.sliderCallback1)
         
         # Run Button:
-        self.w.runButton = vanilla.Button( (-sp-btnX, sp+txY*2, -sp, btnY), "Get text", sizeStyle='regular', callback=self.typeset)
+        self.w.runButton = vanilla.Button( (-sp-btnX, sp+txY*3, -sp, btnY), "Get text", sizeStyle='regular', callback=self.typeset)
         self.w.setDefaultButton( self.w.runButton)
         
         # Load Settings:
@@ -110,14 +113,18 @@ class adhesiontextArabic( object ):
             
             colorUI = int(self.w.color.get())
 
+            includeColor = int(self.w.check.get())
+
             arabicDic = codecs.open(dicFileLocation, 'r', encoding='utf-8')
             arabicWords = [l[:-1] for l in arabicDic.readlines()]
             shuffle(arabicWords)
             arabicWords = arabicWords[:sourceWordsCount]
 
             breakers = ['alef-ar', "alefHamzaabove-ar", "alefHamzabelow-ar", "alefMadda-ar", "alefWasla-ar", 'waw-ar', 'dal-ar', 'thal-ar', 'reh-ar', 'zain-ar', "noonghunna-ar", "tehMarbuta-ar", "waw-ar", "wawHamzaabove-ar","lam_alef-ar", "lam_alefHamzaabove-ar", "lam_alefHamzabelow-ar", "lam_alefMadda-ar", "lam_alefWasla-ar",]
-
-            arabGlyphs = [g.name for g in f.glyphs if g.script=='arabic' and g.category=='Letter' and g.color==colorUI and (len(g.layers[m.id].paths)>0 or len(g.layers[m.id].components)>0)]
+            if includeColor == 1:
+                arabGlyphs = [g.name for g in f.glyphs if g.script=='arabic' and g.category=='Letter' and g.color==colorUI and (len(g.layers[m.id].paths)>0 or len(g.layers[m.id].components)>0)]
+            else:
+                arabGlyphs = [g.name for g in f.glyphs if g.script=='arabic' and g.category=='Letter' and (len(g.layers[m.id].paths)>0 or len(g.layers[m.id].components)>0)]
             # clean arabGlyphs further by removing empty components
             removeFromArabGlyphs = []
             for g in arabGlyphs:

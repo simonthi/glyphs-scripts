@@ -187,13 +187,13 @@ class adhesiontextArabic( object ):
             f.currentTab.text = '  '.join(['/'+'/'.join(w) for w in arabicWordsSimpler2])
 
             f.enableUpdateInterface() # re-enables UI updates in Font View
-        except NoGlyphsofthatColor:
-            if arabGlyphs == null:
+        except Exception, e:
+            if arabGlyphs == []:
                 Glyphs.showMacroWindow()
                 print "No glyphs matching that color"
-        except Exception, e:
-            # brings macro window to front and reports error:
-            Glyphs.showMacroWindow()
-            print "adhesiontext Arabic Error: %s" % e
+            else:
+            # brings macro window to front and reports fallback error:
+                Glyphs.showMacroWindow()
+                print "adhesiontext Arabic Error: %s" % e
 
 adhesiontextArabic()

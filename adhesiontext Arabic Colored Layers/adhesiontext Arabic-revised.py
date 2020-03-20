@@ -1,7 +1,7 @@
 #MenuTitle: adhesiontext Arabic Colored Layers
 # -*- coding: utf-8 -*-
 __doc__="""
-adhesiontext Arabic that is sensitive to positional forms.
+adhesiontext Arabic that is sensitive to positional forms. Choose which charcters to include by giving them a color.
 """
 
 import vanilla

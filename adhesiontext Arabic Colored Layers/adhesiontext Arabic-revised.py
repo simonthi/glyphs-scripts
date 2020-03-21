@@ -1,7 +1,7 @@
-#MenuTitle: adhesiontext Arabic Colored Layers
+#MenuTitle: adhesiontext Arabic Colored Glyphs
 # -*- coding: utf-8 -*-
 __doc__="""
-adhesiontext Arabic that is sensitive to positional forms. Choose which charcters to include by giving them a color.
+adhesiontext Arabic that is sensitive to positional forms. Choose which charcters to include by giving them a color in the Glyphs UI or include all.
 """
 
 import vanilla

@@ -59,7 +59,7 @@ class adhesiontextArabic( object ):
         try:
             Glyphs.defaults["com.Tosche.adhesiontextArabic.words"] = int(self.w.words.get())
             colorChanger = ["red", "orange", "brown", "yellow", "light green", "dark green", "light blue", "dark blue", "purple", "magenta", "light gray", "charcoal"]
-            Glyphs.defaults["com.Tosche.adhesiontextArabic.color"] = colorChanger[int(sender.get())]
+            Glyphs.defaults["com.Tosche.adhesiontextArabic.color"] = colorChanger[int(self.w.color.get())]
         except:
             return False
             
@@ -70,6 +70,7 @@ class adhesiontextArabic( object ):
             self.w.text1.set( "Words: %s" % Glyphs.defaults["com.Tosche.adhesiontextArabic.words"] )
             self.w.words.set(Glyphs.defaults["com.Tosche.adhesiontextArabic.words"])
             self.w.text2.set( "Color: %s" % Glyphs.defaults["com.Tosche.adhesiontextArabic.color"] )
+            self.w.color.set(Glyphs.defaults["com.Tosche.adhesiontextArabic.color"])
         except:
             return False
             

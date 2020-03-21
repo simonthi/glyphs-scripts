@@ -1,4 +1,4 @@
-# adhesiontext Arabic Colored Layers (originally published by [Tosche](https://github.com/Tosche))
+# adhesiontext Arabic Colored Glyphs (originally published by [Tosche](https://github.com/Tosche))
 
 This is a repository for a Python script for the font editor [Glyphs](http://glyphsapp.com/).
 

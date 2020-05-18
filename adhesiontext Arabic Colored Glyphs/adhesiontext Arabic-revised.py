@@ -27,7 +27,7 @@ class adhesiontextArabic( object ):
         self.w = vanilla.FloatingWindow(
             ( windowWidth, windowHeight ), # default window size
             "adhesiontext Arabic, Layer Color", # window title
-            autosaveName = "com.Tosche.adhesiontextArabic.mainwindow" # stores last window position and size
+            autosaveName = "com.simonthi.adhesiontextArabic.mainwindow" # stores last window position and size
             )
         
         arabicDic = open(dicFileLocation, 'r')
@@ -57,8 +57,9 @@ class adhesiontextArabic( object ):
         
     def SavePreferences( self, sender ):
         try:
-            Glyphs.defaults["com.Tosche.adhesiontextArabic.words"] = int(self.w.words.get())
-            Glyphs.defaults["com.Tosche.adhesiontextArabic.color"] = int(self.w.color.get())
+            Glyphs.defaults["com.simonthi.adhesiontextArabic.words"] = int(self.w.words.get())
+            Glyphs.defaults["com.simonthi.adhesiontextArabic.check"] = int(self.w.check.get())
+            Glyphs.defaults["com.simonthi.adhesiontextArabic.color"] = int(self.w.color.get())
         except:
             return False
             
@@ -66,11 +67,12 @@ class adhesiontextArabic( object ):
 
     def LoadPreferences( self ):
         try:
-            self.w.text1.set( "Words: %s" % Glyphs.defaults["com.Tosche.adhesiontextArabic.words"] )
-            self.w.words.set(Glyphs.defaults["com.Tosche.adhesiontextArabic.words"])
+            self.w.text1.set( "Words: %s" % Glyphs.defaults["com.simonthi.adhesiontextArabic.words"] )
+            self.w.words.set(Glyphs.defaults["com.simonthi.adhesiontextArabic.words"])
+            self.w.check.set(Glyphs.defaults["com.simonthi.adhesiontextArabic.check"])
             colorChanger = ["red", "orange", "brown", "yellow", "light green", "dark green", "light blue", "dark blue", "purple", "magenta", "light gray", "charcoal"]
-            self.w.text2.set( "Color: %s" % colorChanger[Glyphs.defaults["com.Tosche.adhesiontextArabic.color"]] )
-            self.w.color.set(Glyphs.defaults["com.Tosche.adhesiontextArabic.color"])
+            self.w.text2.set( "Color: %s" % colorChanger[Glyphs.defaults["com.simonthi.adhesiontextArabic.color"]] )
+            self.w.color.set(Glyphs.defaults["com.simonthi.adhesiontextArabic.color"])
         except:
             return False
             

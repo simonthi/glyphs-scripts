@@ -11,7 +11,7 @@ For advacned users: clone this repo into your scripts folder. This helps keeping
 # About the scripts
 
 ## adhesiontext Arabic Colored layers
-An adaption of Toshi’s adhesiontext Arabic to take into account the given color for a glyph in the Glyphs UI to choose which characters to include,
+An adaptation of Toshi’s adhesiontext Arabic to take into account the given color for a glyph in the Glyphs UI to choose which characters to include,
 
 
 ## UnicodeReporter

@@ -16,3 +16,6 @@ An adaptation of Toshi’s adhesiontext Arabic to take into account the given co
 
 ## UnicodeReporter
 A quick script that dumps out Glyphs that have more than one Unicode value assigned and those which have none. Byebye exporting errors!
+
+## Batch Update Metrics
+A script to make your font fit tighter or looser. Update all Metrics on all Glyphs in one go. Helpful to quickly test tighter and looser fitting. Recommended for more or less properly spaced fonts only.

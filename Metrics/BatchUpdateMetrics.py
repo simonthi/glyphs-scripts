@@ -74,6 +74,10 @@ class batchUpdate( object ):
         except:
             Glyphs.showMacroWindow()
             print "ENTER A NUMBER!"
+    ## Truncate solution from https://realpython.com/python-rounding/#the-decimal-class
+    def truncate( n, decimals ):
+        multiplier = 10 ** decimals
+        return int(n * multiplier) / multiplier
 
     def reSync( self ):
         font = Glyphs.font
@@ -100,11 +104,6 @@ class batchUpdate( object ):
             elif myGlyph.leftMetricsKey == None and myGlyph.rightMetricsKey != None:
                 myGlyph.layers[font.selectedLayers[0].layerId].LSB = myGlyph.layers[font.selectedLayers[0].layerId].LSB + updateUnits
         self.reSync()
-
-    ## Truncate solution from https://realpython.com/python-rounding/#the-decimal-class
-    def truncate(n, decimals=0):
-        multiplier = 10 ** decimals
-        return int(n * multiplier) / multiplier
 
 
 batchUpdate()

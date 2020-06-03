@@ -77,7 +77,7 @@ class batchUpdate( object ):
 
     def reSync( self ):
         font = Glyphs.font
-        updateUnits = str(self.w.units.get())
+        updateUnits = truncate(str(self.w.units.get()), -1)
         for myGlyph in Glyphs.font.glyphs:
             if myGlyph.leftMetricsKey != None and myGlyph.rightMetricsKey == None:
                 myGlyph.layers[font.selectedLayers[0].layerId].syncMetrics()
@@ -90,7 +90,7 @@ class batchUpdate( object ):
 
     def updateMetrics( self, sender ):
         font = Glyphs.font
-        updateUnits = int(self.w.units.get())
+        updateUnits = truncate(int(self.w.units.get()), -1)
         for myGlyph in Glyphs.font.glyphs:
             if myGlyph.leftMetricsKey == None and myGlyph.rightMetricsKey == None:
                 myGlyph.layers[font.selectedLayers[0].layerId].LSB = myGlyph.layers[font.selectedLayers[0].layerId].LSB + updateUnits

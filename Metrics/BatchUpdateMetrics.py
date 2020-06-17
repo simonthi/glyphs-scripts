@@ -93,12 +93,12 @@ class batchUpdate( object ):
         font = Glyphs.font
         updateUnits = int(self.w.units.get())
         for myGlyph in Glyphs.font.glyphs:
-            if myGlyph.leftMetricsKey == None and myGlyph.rightMetricsKey == None:
+            if myGlyph.leftMetricsKey == None and myGlyph.rightMetricsKey == None and myGlyph.widthMetricsKey == None:
                 myGlyph.layers[font.selectedLayers[0].layerId].LSB = myGlyph.layers[font.selectedLayers[0].layerId].LSB + updateUnits
                 myGlyph.layers[font.selectedLayers[0].layerId].RSB = myGlyph.layers[font.selectedLayers[0].layerId].RSB + updateUnits
-            elif myGlyph.leftMetricsKey != None and myGlyph.rightMetricsKey == None:
+            elif myGlyph.leftMetricsKey != None and myGlyph.rightMetricsKey == None and myGlyph.widthMetricsKey == None:
                 myGlyph.layers[font.selectedLayers[0].layerId].RSB = myGlyph.layers[font.selectedLayers[0].layerId].RSB + updateUnits
-            elif myGlyph.leftMetricsKey == None and myGlyph.rightMetricsKey != None:
+            elif myGlyph.leftMetricsKey == None and myGlyph.rightMetricsKey != None and myGlyph.widthMetricsKey == None:
                 myGlyph.layers[font.selectedLayers[0].layerId].LSB = myGlyph.layers[font.selectedLayers[0].layerId].LSB + updateUnits
         self.reSync()
 

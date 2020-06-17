@@ -74,11 +74,7 @@ class batchUpdate( object ):
         except:
             Glyphs.showMacroWindow()
             print "ENTER A NUMBER!"
-
-    ## Truncate solution from https://realpython.com/python-rounding/#the-decimal-class
-    def truncate( n, decimals=0 ):
-        multiplier = 10 ** decimals
-        return int(n * multiplier) / multiplier
+            
 
     def reSync( self ):
         font = Glyphs.font

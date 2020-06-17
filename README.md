@@ -7,6 +7,10 @@ A collection of Glyphs scripts.
 Download the rpository and put the scripts in the Glyphs Script folder. Go to Scripts --> Open Script folder, place downloaded items. After that reload scripts, holding down the alt key while pressing on Scripts in the Glyphs menu bar.
 
 For advacned users: clone this repo into your scripts folder. This helps keeping files in sync!
+For example like this:
+`git clone https://github.com/simonthi/glyphs-scripts.git ~/Users/USER/Library/Application Support/Glyphs/Scripts` and replace USER with your username on your machine.
+
+
 
 # About the scripts
 

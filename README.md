@@ -23,4 +23,5 @@ A quick script that dumps out Glyphs that have more than one Unicode value assig
 
 ## Batch Update Metrics
 *EDIT: I found out that this is completely redundant :grinning: I still like it and it does it’s job, but of course it is built into Glyphs.*
+
 A script to make your font fit tighter or looser. Update all Metrics on all Glyphs in one go. Helpful to quickly test tighter and looser fitting. Recommended for more or less properly spaced fonts only.

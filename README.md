@@ -11,10 +11,15 @@ Or git clone this repo into that folder.
 
 # About the scripts
 
+## Transform
+
+### ScaleSelectedFromCenter
+It’s weird but Glyphs does not allow you choose the scale origin for selected shapes. This is fixed by this scripts. Selected shapes, enter scale factor, and tranfsorm origin. Scale.
+
 ## Test
 
 ### adhesiontext Arabic Colored layers
-An adaptation of Toshi’s adhesiontext Arabic to take into account the given color for a glyph in the Glyphs UI to choose which characters to include,
+An adaptation of Toshi’s adhesiontext Arabic to take into account the given color for a glyph in the Glyphs UI to choose which characters to include.
 
 ## OTFeatures
 

@@ -1,7 +1,7 @@
-#MenuTitle: Scale selected shapes from center
+#MenuTitle: Scale selected shapes from respective origin
 # -*- coding: utf-8 -*-
 __doc__="""
-Scale selcted shapes by given factor from their respective center.
+Scale selcted shapes by given factor from their given origin.
 """
 
 import vanilla

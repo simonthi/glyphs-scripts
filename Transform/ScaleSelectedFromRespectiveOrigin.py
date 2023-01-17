@@ -24,7 +24,7 @@ class scale( object ):
 
         self.w = vanilla.FloatingWindow(
             ( windowWidth, windowHeight ), # default window size
-            "Scale selected shapes from center", # window title
+            "Scale selected shapes from respective origin", # window title
             autosaveName = "com.simonthi.Scale.mainwindow" # stores last window position and size
             )
 

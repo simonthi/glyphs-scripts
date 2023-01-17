@@ -13,8 +13,8 @@ Or git clone this repo into that folder.
 
 ## Transform
 
-### ScaleSelectedFromCenter
-It’s weird but Glyphs does not allow you choose the scale origin for selected shapes. This is fixed by this scripts. Selected shapes, enter scale factor, and tranfsorm origin. Scale.
+### ScaleSelectedFromRespectiveOrigin
+It’s weird but Glyphs does not allow you choose the scale origin for selected shapes. This is fixed by this script. Select shapes, enter scale factor, and tranfsorm origin. Scale. Be happy ☺️
 
 ## Test
 
